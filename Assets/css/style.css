@@ -1,0 +1,51 @@
+/*Grid Principal*/
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        'header header header'
+        'menu main right'
+        'menu footer footer';
+    gap: 2px;
+    background-color: red;
+}
+/* Style des 5 éléments */
+.gridContainer>div {
+    color: black;
+    padding: 20px;
+    background-color: #ffcccc;
+    text-align: center;
+}
+/* les 5 éléments du Grid */
+#item1 {
+    grid-area: header;
+}
+
+#item2 {
+    grid-area: menu;
+}
+
+#item3 {
+    grid-area: main;
+}
+
+#item4 {
+    grid-area: right;
+}
+
+#item5 {
+    grid-area: footer;
+}
+/* Partie responsive */
+@media screen and (max-width: 640px) {
+    .gridContainer {
+        grid-template-areas:
+            'header header header'
+            'menu menu menu'
+            'main main main'
+            'right right right'
+            'footer footer footer'
+        ;
+    }
+}
